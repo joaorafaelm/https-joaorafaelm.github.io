@@ -6,7 +6,7 @@ permalink: /blog/:title
 name: João R.
 description: dev
 google_verification: null
-
+google_analytics: UA-104187041-1
 
 # File management
 include: [".htaccess"]
