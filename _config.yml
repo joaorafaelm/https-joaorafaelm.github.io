@@ -10,8 +10,7 @@ google_analytics: UA-104187041-1
 
 # File management
 include: [".htaccess"]
-exclude: ["README.md", "LICENSE"]
-destination: ".site"
+exclude: ["README.md", "LICENSE", "Rakefile"]
 
 # Sass
 sass:
@@ -30,6 +29,6 @@ extlinks:
   attributes: {rel: nofollow, target: _blank}
   rel_exclude: ['github.com', 'github.io']
 
-gems:
+plugins:
     - jekyll-sitemap
     - jekyll-extlinks
