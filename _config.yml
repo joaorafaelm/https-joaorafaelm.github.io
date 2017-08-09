@@ -1,7 +1,6 @@
 # Blog settings
 permalink: /blog/:title
 
-
 # My variables
 name: João R.
 description: dev
@@ -24,10 +23,6 @@ kramdown:
   input: GFM
   hard_wrap: false
 highlighter: rouge
-
-extlinks:
-  attributes: {rel: nofollow, target: _blank}
-  rel_exclude: ['github.com', 'github.io']
 
 plugins:
     - jekyll-sitemap
