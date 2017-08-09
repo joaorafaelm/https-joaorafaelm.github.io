@@ -30,6 +30,6 @@ extlinks:
   attributes: {rel: nofollow, target: _blank}
   rel_exclude: ['github.com', 'github.io']
 
-plugins:
+gems:
     - jekyll-sitemap
     - jekyll-extlinks
