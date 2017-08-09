@@ -26,4 +26,10 @@ kramdown:
   hard_wrap: false
 highlighter: rouge
 
-gems: [jekyll-sitemap]
+extlinks:
+  attributes: {rel: nofollow, target: _blank}
+  rel_exclude: ['github.com', 'github.io']
+
+plugins:
+    - jekyll-sitemap
+    - jekyll-extlinks
