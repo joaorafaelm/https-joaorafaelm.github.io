@@ -3,19 +3,19 @@ layout: post
 title: GraphQL and Django in 5 minutes
 comments: true
 published: true
+tags: [GraphQL, Python, Django]
 ---
 
-**TL;DR** Jump to the [coding part](#models-and-graphql-schema) or get the code
- [here](https://github.com/joaorafaelm/graphql-django-example){:target="_blank"}.
+> **TL;DR** Jump to the [coding part](#models-and-graphql-schema) or get the code [here](https://github.com/joaorafaelm/graphql-django-example).
 
 # What is GraphQL?
 GraphQL query is a string that is sent to a server to be interpreted and fulfilled, which then returns JSON back to the client.
-It was created by Facebook in 2012 and the first [specification draft](http://facebook.github.io/graphql/){:target="_blank"} was made public in 2015.
+It was created by Facebook in 2012 and the first [specification draft](http://facebook.github.io/graphql/) was made public in 2015.
 
 In this tutorial I will cover the basics of working with GraphQL and Django.
 
 # Getting started
-Before creating the project and all, make sure you have [virtualenv](https://virtualenv.pypa.io/en/stable/){:target="_blank"} installed, so that the packages used in this tutorial won't be installed system-wide.
+Before creating the project and all, make sure you have [virtualenv](https://virtualenv.pypa.io/en/stable/) installed, so that the packages used in this tutorial won't be installed system-wide.
 
 ```bash
 # Clone the repo
@@ -65,9 +65,9 @@ class Book(models.Model):
         return self.title
 ```
 
-After creating the models, the [Schema](http://graphql.org/learn/schema/#type-language){:target="_blank"} should be created, which will be used to serve the API.
+After creating the models, the [Schema](http://graphql.org/learn/schema/#type-language) should be created, which will be used to serve the API.
 
-At the time of writing this post, [graphene-django](https://github.com/graphql-python/graphene-django){:target="_blank"} version is 1.3 and it does not handle ManyToMany fields properly, that is why the `resolve_authors` method was added. This issue has been [resolved](https://github.com/graphql-python/graphene-django/issues/155){:target="_blank"} for the next release.
+At the time of writing this post, [graphene-django](https://github.com/graphql-python/graphene-django) version is 1.3 and it does not handle ManyToMany fields properly, that is why the `resolve_authors` method was added. This issue has been [resolved](https://github.com/graphql-python/graphene-django/issues/155) for the next release.
 
 ```python
 # bookstore/schema.py
@@ -129,10 +129,10 @@ urlpatterns = [
     url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
 ]
 ```
-You can now run `python manage.py runserver` and start using the API at [http://localhost:8000/graphql](http://localhost:8000/graphql){:target="_blank"}.
+You can now run `python manage.py runserver` and start using the API at [http://localhost:8000/graphql](http://localhost:8000/graphql).
 
 # Querying and debugging
-[GraphiQL](https://github.com/graphql/graphiql){:target="_blank"} provides a graphical interactive in-browser GraphQL IDE, including some features such as syntax highlighting, real-time error reporting, automatic query completion etc.
+[GraphiQL](https://github.com/graphql/graphiql) provides a graphical interactive in-browser GraphQL IDE, including some features such as syntax highlighting, real-time error reporting, automatic query completion etc.
 
 I will show some query examples, but you can learn more about querying at [graphql.org/learn/queries/](http://graphql.org/learn/queries/).
 
@@ -220,4 +220,4 @@ Response:
 
 ---
 
-All this code is on my [Github](https://github.com/joaorafaelm/graphql-django-example/){:target="_blank"}. Please do fork it and make pull requests regarding any issues or improvements you may have with my code.
+All this code is on my [Github](https://github.com/joaorafaelm/graphql-django-example/). Please do fork it and make pull requests regarding any issues or improvements you may have with my code.

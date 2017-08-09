@@ -2,26 +2,18 @@
 layout: default
 ---
 
-<div class="post">
-	<div class="post__back">
-    	<a href="/">&lt;-- home</a>
-    </div>
-    <div class="post__title">
-    	<h1>{{ page.title }}</h1>
-    </div>
-    <div class="post__date">
-    	<p>{{ page.date | date: '%B %-d, %Y' }}</p>
-    </div>
-    <div class="post__meta">
-    	<p>{{ tags_content }}</p>
-    </div>
-    <div class="post__content"?>
-        {{ content }}
-    </div>
+<div class="post__title">
+	<h1>{{ page.title }}</h1>
+</div>
+<div class="post__date">
+	<p>{{ page.date | date: '%B %-d, %Y' }}</p>
+</div>
+<div class="post__content">
+    {{ content | extlinks }}
 </div>
 
 {% if page.comments %}
-<div class="disqus">
-    {% include comments.html %}
-</div>
+    <div class="disqus">
+        {% include comments.html %}
+    </div>
 {% endif %}

@@ -6,23 +6,29 @@
 
 @import url(son-of-obsidian.css);
 
+::-moz-selection { background: $color-hire-blue;}
+::selection { background: $color-hire-blue; }
+
 body {
 	color: $color-black;
 	background: $background;
 	font-family: 'Inconsolata', ;
 	font-size: 100%;
 	font-weight: 400;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 h1 {
+	font-size: 1.4em;
 	margin-bottom: 5px;
 }
 p {
 	font-size: 1em;
-	line-height: 150%;
+	line-height: 1.5;
 }
 a {
   color: $color-link;
   text-decoration: none;
+  font-weight: bold;
   &:visited {
 	color: $color-link;
 	text-decoration: none;
@@ -31,7 +37,7 @@ a {
 	color: $color-link;
 	text-decoration: none;
 	padding-bottom: 1px;
-	border-bottom: 1px solid $color-link;
+	border-bottom: 2px solid $color-link;
     background-color: $color-hire-blue;
   }
   &:active {
@@ -58,8 +64,8 @@ hr {
 
 .wrapper {
 	max-width: 600px;
-	margin: auto;
-	padding: 60px 30px 60px 30px;
+	margin: 20px auto;
+	padding: 0px;
 	@media screen and (max-width: $br) {
 		padding: 20px;
 	}
@@ -67,45 +73,57 @@ hr {
 
 
 .header {
-	display: flex;
+	display: flex !important;
 	justify-content: space-between;
-	align-items: baseline;
-	padding-bottom: 50px;
+	align-items: center;
 	@media screen and (max-width: $br) {
 		display: block;
 	}
 	h1 {
 		font-size: 2em;
 		margin-bottom: 0;
-	}
-	ul {
-		margin-top: 10px;
-		li {
-			display: inline;
-			padding: 0;
-			padding-left: 5px;
+		a {
+			color: $color-black;
+			font-weight: normal;
+			&:visited{
+				color: $color-black;
+			}
+			&:hover {
+				text-decoration: none;
+				background: none;
+				color: $color-link;
+				border: none;
+			}
 		}
 	}
-}
 
-.blog {
-	padding-bottom: 30px;
-	h1 {
-		font-size: 1.4em;
-		margin-bottom: 5px;
+	ul li {
+		display: inline;
+		padding: 0;
+		padding-left: 10px;
 	}
 }
 
 .post {
-	padding-bottom: 30px;
-	&__back {}
+	margin-top: -160px;
+	padding: 20px 30px;
+	background-color: $background;
+	min-height: 200px;
+	position: relative;
+	z-index: 2;
+	&__back {
+	}
+	&__date {
+		text-align: center;
+	}
 	&__title {
 		display: block;
 		margin-top: 20px;
 		margin-bottom: 6px;
+		text-align: center;
 		h1 {
 			display: inline-block;
-			font-size: 1.6em;
+			font-size: 1.9em;
 			font-weight: 700;
 			padding-right: 10px;
 			padding-bottom: 2px;
@@ -129,7 +147,7 @@ hr {
 		}
 		p {
 			font-size: 1em;
-			line-height: 150%;
+			line-height: 1.8;
 			margin-bottom: 15px;
 		}
 		strong {
@@ -182,6 +200,11 @@ hr {
 				word-break: break-word;
 			}
 		}
+		blockquote {
+			color: $color-dark-grey;
+			text-align: center;
+			border-left: 4px solid $color-grey;
+		}
 	}
 }
 
@@ -205,5 +228,17 @@ hr {
 			line-height: 150%;
 			margin-bottom: 10px;
 		}
+	}
+}
+
+#canvas {
+	position: relative;
+    z-index: 1;
+}
+
+.anchorjs-link {
+	&:hover {
+		border: none;
+		background: none;
 	}
 }
