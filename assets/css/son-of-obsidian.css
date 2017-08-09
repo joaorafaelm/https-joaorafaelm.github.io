@@ -64,10 +64,12 @@
 .highlight .vi { color: #F1F2F3 } /* Name.Variable.Instance */
 .highlight .il { color: #FFCD22 } /* Literal.Number.Integer.Long */
 
-pre.highlight, .highlight pre { 
-    color:#F1F2F3; 
-    background-color: #272727 
+pre.highlight, .highlight pre {
+    color:#F1F2F3;
+    background-color: #272727
 }
 .highlight span {
+    white-space: pre-wrap;
+    word-break: break-word;
     word-wrap: break-word;
 }
