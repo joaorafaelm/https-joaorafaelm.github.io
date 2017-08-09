@@ -29,6 +29,7 @@
     const cellSize = 4;
     const cellMargin = 2;
     const cellsPerLine = canvas.width / (cellSize + cellMargin) >> 0;
+    const cellsPerColumn = canvas.height / (cellSize + cellMargin) >> 0;
 
     // Get click position and spawn a few cells into life
     canvas.addEventListener('click', getPosition, false);
@@ -69,7 +70,7 @@
     }
 
     // Populate cells with dead cells
-    for (var row = 0; row < cellsPerLine; row++) {
+    for (var row = 0; row < cellsPerColumn; row++) {
         const y = row * (cellSize + cellMargin);
         for (var col = 0; col < cellsPerLine; col++) {
             const cell = new Map();
@@ -135,13 +136,14 @@
         });
 
         // repeat
-        setTimeout(() => requestAnimationFrame(anim), 100);
+        setTimeout(() => requestAnimationFrame(anim), 50);
     };
 
 
     const randomInt = (min, max) =>
         Math.floor(Math.random() * (max - min + 1)) + min;
-    for (var i = 0; i < 5000; i++) {
+
+    for (var i = 0; i < 2000; i++) {
         const cell = cells[randomInt(0, cells.length - 1)];
         cell.set("isAlive", true);
 
