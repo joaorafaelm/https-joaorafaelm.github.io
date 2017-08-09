@@ -2,10 +2,7 @@
 layout: default
 ---
 
-# About me
-Hi, my name is João Rafael.
+# About me 😄
+Hi, my name is João Rafael and I am a software developer. 
 
----
-
-# What do you do?
-I am a software developer. You can find some projects I made on my [Github](https://github.com/joaorafaelm).
+You can contact me at [joaoraf@me.com](mailto:joaoraf@me.com), [Github](https://github.com/joaorafaelm) or [LinkedIn](https://www.linkedin.com/in/joaoraf).
