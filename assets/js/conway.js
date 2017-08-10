@@ -59,7 +59,6 @@
         // blueish palette
         '#5E8AC4',
         '#98C1D9',
-        '#E0FBFC',
         '#4F9AEF',
         '#0BB8ED'
     ]);
