@@ -26,4 +26,3 @@ highlighter: rouge
 
 plugins:
     - jekyll-sitemap
-    - jekyll-extlinks
