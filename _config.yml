@@ -3,9 +3,9 @@ permalink: /blog/:title
 
 # My variables
 name: João R.
-description: dev
 google_verification: null
 google_analytics: UA-104187041-1
+twitter_username: jrmol
 
 # File management
 include: [".htaccess"]

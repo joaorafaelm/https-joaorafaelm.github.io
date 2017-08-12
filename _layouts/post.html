@@ -8,6 +8,9 @@ layout: default
 <div class="post__date">
 	<p>{{ page.date | date: '%B %-d, %Y' }}</p>
 </div>
+
+{% include share.html %}
+
 <div class="post__content">
     {{ content }}
 </div>

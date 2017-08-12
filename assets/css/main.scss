@@ -26,7 +26,7 @@ h1 {
 }
 p {
 	font-size: 1em;
-	line-height: 1.5;
+	line-height: 1.8;
 }
 a {
   color: $color-link;
@@ -140,7 +140,7 @@ hr {
 		}
 	}
 	&__content {
-		padding-top: 40px;
+		padding-top: 10px;
 		h1 {
 			font-size: 1.4em;
 			font-weight: 700;
@@ -226,4 +226,39 @@ hr {
 		border: none;
 		background: none;
 	}
+}
+
+.blog-list {
+	a {
+		line-height: 1.8;
+	}
+}
+
+.share {
+    margin: 10px 0;
+
+    ul {
+        list-style: none;
+		text-align: center;
+        li {
+            display: inline;
+			padding-left: 0;
+            a {
+                &:hover {
+                    text-decoration: none;
+					border: none;
+					background: none;
+					svg {
+						fill: $color-link;
+					}
+                }
+
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    fill: $color-grey;
+                }
+            }
+        }
+    }
 }
