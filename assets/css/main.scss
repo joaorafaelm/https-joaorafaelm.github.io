@@ -58,6 +58,7 @@ ul {
 	li {
 		padding: 5px;
 		padding-left: 10px;
+		line-height: 1.8;
 		@media screen and (max-width: $br) {
 			padding: 10px 0 10px 0;
 		}
@@ -68,6 +69,30 @@ hr {
     border: 0;
     margin-bottom: 15px;
     border-bottom: 2px solid $color-grey;
+}
+
+table {
+    width: 100%;
+    overflow: auto;
+	margin-bottom: 15px;
+}
+
+table th {
+    font-weight: 600
+}
+
+table th, table td {
+    padding: 10px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f6f8fa;
 }
 
 .wrapper {
