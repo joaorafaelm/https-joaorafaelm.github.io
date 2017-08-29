@@ -104,7 +104,6 @@ table tr:nth-child(2n) {
 	}
 }
 
-
 .header {
 	display: flex !important;
 	justify-content: space-between;
@@ -140,13 +139,27 @@ table tr:nth-child(2n) {
 	}
 }
 
+.blog-list {
+	@media screen and (max-width: $br) {
+		padding: 10px 20px;
+	}
+}
+
 .post {
 	margin-top: -160px;
 	padding: 20px 30px;
-	background-color: $background;
 	min-height: 200px;
 	position: relative;
 	z-index: 2;
+	background-color: $background;
+	@media screen and (max-width: $br) {
+		padding: 10px;
+	}
+	&>h1, &>p{
+		@media screen and (max-width: $br) {
+			padding: 20px;
+		}
+	}
 	&__date {
 		text-align: center;
 	}
@@ -182,6 +195,7 @@ table tr:nth-child(2n) {
 			font-size: 1em;
 			line-height: 1.8;
 			margin-bottom: 15px;
+			text-align: justify;
 		}
 		strong {
 			font-weight: 700;
@@ -237,6 +251,9 @@ table tr:nth-child(2n) {
 			color: $color-dark-grey;
 			text-align: center;
 			border-left: 4px solid $color-grey;
+			p {
+				padding: 10px;
+			}
 		}
 	}
 }

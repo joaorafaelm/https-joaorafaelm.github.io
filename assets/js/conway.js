@@ -11,11 +11,15 @@
     const cells = [];
 
     // resize canvas to parent width and height
-    window.addEventListener('resize', function(){
-        // canvas.style.height = '40%';
-        // canvas.style.width = window.innerWidth;
-        // canvas.height = window.innerHeight;
-        canvas.width = window.innerWidth;
+    window.addEventListener("init", function(){
+
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = canvas.height + "px";
+
+        canvas.width = window.innerWidth * 2;
+        canvas.height = canvas.height * 2;
+
+        canvas.getContext("2d").scale(2,2)
 
         // redraw dead cells
         cells.forEach(cell => {
@@ -24,15 +28,16 @@
         });
 
     }, false);
-    window.dispatchEvent(new Event('resize'));
+
+    window.dispatchEvent(new Event("init"));
 
     const cellSize = 4;
     const cellMargin = 2;
-    const cellsPerLine = canvas.width / (cellSize + cellMargin) >> 0;
-    const cellsPerColumn = canvas.height / (cellSize + cellMargin) >> 0;
+    const cellsPerLine = (canvas.width / 2 >> 0) / (cellSize + cellMargin) >> 0;
+    const cellsPerColumn = (canvas.height / 2 >> 0) / (cellSize + cellMargin) >> 0;
 
     // Get click position and spawn a few cells into life
-    canvas.addEventListener('click', getPosition, false);
+    canvas.addEventListener("click", getPosition, false);
     function getPosition(event) {
         var x = event.x;
         var y = event.y;
@@ -57,15 +62,29 @@
     cellColors.set("dead", ["rgb(235, 237, 239)"]);
     cellColors.set("alive", [
         // blueish palette
-        '#5E8AC4',
-        '#98C1D9',
-        '#4F9AEF',
-        '#0BB8ED'
+        // "#5E8AC4",
+        // "#98C1D9",
+        // "#4F9AEF",
+        // "#0BB8ED",
+        [214, "30%", "60%"],
+        [202, "30%", "65%"],
+        [212, "30%", "75%"],
+        [194, "30%", "85%"]
     ]);
 
     const randomColor = (array) => {
         let key  = Math.floor(Math.random() * array.length);
-        return array[key];
+        color = array[key].slice();
+
+        if (color.constructor === Array) {
+            hue_shift = (Date.now() / 50 >> 0) % 360;
+            color[0] = (color[0] + hue_shift) % 360;
+
+            return "hsl(" + color.join() + ")";
+        } else {
+            return color;
+        }
+
     }
 
     // Populate cells with dead cells
@@ -126,16 +145,22 @@
 
         // draw
         cells.forEach(cell => {
-            if (cell.get("isAlive") == cell.get("willLive")) return;
-            cell.set("isAlive", cell.get("willLive"));
-            ctx.fillStyle = randomColor(cellColors.get(
-                cell.get("isAlive") ? "alive" : "dead"
-            ));
+            if (cell.get("isAlive") != cell.get("willLive")) {
+                cell.set("isAlive", cell.get("willLive"));
+            }
+
+            color = randomColor(
+                cellColors.get(cell.get("isAlive") ? "alive" : "dead")
+            );
+
+            ctx.fillStyle = color;
+
             ctx.fillRect(cell.get("x"), cell.get("y"), cellSize, cellSize);
         });
 
         // repeat
         setTimeout(() => requestAnimationFrame(anim), 50);
+
     };
 
 
