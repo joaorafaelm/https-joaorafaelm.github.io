@@ -59,7 +59,9 @@
     // Cell colors
     const cellColors = new Map();
     cellColors.set("spawn", "rgb(245, 247, 249)");
-    cellColors.set("dead", ["rgb(235, 237, 239)"]);
+    cellColors.set("dead", [
+        "rgb(235, 237, 239)" 
+    ]);
     cellColors.set("alive", [
         // blueish palette
         // "#5E8AC4",
@@ -77,7 +79,7 @@
         color = array[key].slice();
 
         if (color.constructor === Array) {
-            hue_shift = (Date.now() / 50 >> 0) % 360;
+            hue_shift = (Date.now() / 20 >> 0) % 360;
             color[0] = (color[0] + hue_shift) % 360;
 
             return "hsl(" + color.join() + ")";
