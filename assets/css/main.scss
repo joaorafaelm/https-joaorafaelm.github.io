@@ -195,7 +195,18 @@ table tr:nth-child(2n) {
 			font-size: 1em;
 			line-height: 1.8;
 			margin-bottom: 15px;
-			text-align: justify;
+            text-align: justify;
+            /* Warning: Needed for oldIE support, but words are broken up letter-by-letter */
+            -ms-word-break: break-all;
+            word-break: break-all;
+
+            /* Non standard for webkit */
+            word-break: break-word;
+
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
 		}
 		strong {
 			font-weight: 700;
