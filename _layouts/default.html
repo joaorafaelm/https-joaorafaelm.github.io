@@ -2,68 +2,39 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     {% if page.title %}
         <title>{{ page.title }}</title>
     {% else %}
-        <title>{{ site.name }}</title>
+        <title>Posts</title>
     {% endif %}
 
     <meta name="description" content="{{ site.description }}">
+    <style>
+        *{
+            color: #555;
+            line-height: 1.7;
+            margin: 10px auto 20px auto;
+            max-width: 36em;
+            overflow-wrap: break-word;
+            text-underline-position: under;
+        }
+        ul{padding:0 1em}
+        hr {border-style: solid}
+        pre {max-width: 100%; background: #fbfbfb; padding: 5px}
+        .s,.s2{font-style: italic}
+        .c,.c1,.p,.o{color: #bbb}
+        .kn,.k,.nl{font-weight: bold}
 
-    {% if site.google_verification %}
-        <meta name="google-site-verification" content="{{ site.google_verify }}">
-    {% endif %}
-
-    <link rel="icon" href="/assets/img/favicon.png">
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    {% if jekyll.environment == 'production' %}
-        {% include analytics.html %}
-    {% endif %}
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="header">
-            <h1><a href="/">{{ site.name }}</a></h1>
-            <ul>
-                {% for item in site.data.navigation %}
-                <li>
-                    <a href="{{ item.url }}">{{ item.title }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-
-    <canvas id="canvas" height="200"></canvas>
-
-    <div class="wrapper">
-        <div class="post">
-            {{ content | extlinks }}
-        </div>
-    </div>
-    <script type="text/javascript" src="/assets/js/conway.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/anchor-js/4.0.0/anchor.js"></script>
-    <script>
-        anchors.options = {
-            icon: '#'
-        };
-        anchors.add('.post__content h1');
-
-        // any link that is not part of the current domain is modified
-        (function() {
-          var links = document.links;
-          for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-            // can also be links[i].hostname != 'subdomain.example.com'
-            if (links[i].hostname != window.location.hostname) {
-              links[i].target = '_blank';
-              links[i].className += ' externalLink';
-            }
-          }
-        })();
-    </script>
+    <header align="right">
+        <a href="/"><strong>Posts</strong></a>
+        <a href="/me"><strong>About</strong></a>
+    </header>
+    <hr/>
+    {{ content | extlinks }}
 </body>
 </html>

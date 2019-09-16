@@ -2,21 +2,6 @@
 layout: default
 ---
 
-<div class="post__title">
-	<h1>{{ page.title }}</h1>
-</div>
-<div class="post__date">
-	<p>{{ page.date | date: '%B %-d, %Y' }}</p>
-</div>
-
-{% include share.html %}
-
-<div class="post__content">
-    {{ content }}
-</div>
-
-{% if page.comments %}
-    <div class="disqus">
-        {% include comments.html %}
-    </div>
-{% endif %}
+<h1>{{ page.title }}</h1>
+<p><em>{{ page.date | date: '%B %-d, %Y' }}</em></p>
+{{ content }}
