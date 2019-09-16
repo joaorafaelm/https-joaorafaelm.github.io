@@ -1,9 +1,7 @@
 ---
 layout: post
 title: Text Classification with Python
-comments: true
-published: true
-tags: [NLP, Machine Learning, Python]
+tags: [NLP,Machine Learning,Python]
 ---
 
 > If you are already familiar with what text classification is, you might want to jump to [this part](#testing-the-algorithms), or get the code [here](https://github.com/joaorafaelm/text-classification-python).
